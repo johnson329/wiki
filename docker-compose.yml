@@ -1,0 +1,52 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    restart: always
+    container_name: nginx-container
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # django的static和uploads文件，挂载出来共享
+      - ./static:/home/www/static
+      - ./uploads:/home/www/uploads
+      # 配置文件
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      # 日志
+      - ./log/nginx:/var/log/nginx
+
+
+  django:
+    build:
+      context: .
+      dockerfile: ./django/Dockerfile
+    container_name: django-container
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: wiki
+      MYSQL_USER: wiki_user
+      MYSQL_PASSWORD: wiki_user_123321
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/my.cnf:/etc/my.cnf
+
+
+#  redis:
+#    image: 'redis'
+#    container_name: redis-container
+
+
+
+
+
