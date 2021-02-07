@@ -1,3 +1,1 @@
-daemon = False
-loglevel = 'info'
-errorlog = 'logs/error.log'
+bind = "0.0.0.0:8000"
