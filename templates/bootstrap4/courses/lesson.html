@@ -25,7 +25,7 @@
                     <a class="card-link" href="{{ course.get_absolute_url }}">{{ course.title }}</a>
                   </h5>
 
-                  <small class="text-muted">作者: {{ course.owner.username }} - 共{{ lessons.count }}章</small>
+{#                  <small class="text-muted">作者: {{ course.owner.username }} - 共{{ lessons.count }}章</small>#}
                   <div id="star"></div>
                 </div>
 {#                <div class="card-body">#}
@@ -49,8 +49,9 @@
                   <!--标签---------------------------------------------------------------------------------------------------------------------->
                    <h1>{{ lesson.title }}</h1>
                     <small>
-                    <span class="pull-right text-muted">{{ course.owner.username }} 更新于：{{ lesson.updated }}</span>&nbsp;
-                    <span class="text-muted">浏览 {{ lesson.views }} &nbsp;&nbsp;赞 <span id="likes">{{ lesson.likes }}&nbsp;&nbsp;</span>评论 1 </span>
+{#                    <span class="pull-right text-muted">{{ course.owner.username }} 更新于：{{ lesson.updated }}</span>&nbsp;#}
+{#                    <span class="text-muted">浏览 {{ lesson.views }} &nbsp;&nbsp;赞 <span id="likes">{{ lesson.likes }}&nbsp;&nbsp;</span>评论 1 </span>#}
+                    <span class="text-muted">浏览 {{ lesson.views }} &nbsp;&nbsp;</span>
                   </small>
                   <hr>
                  {{ lesson.content|safe }}
@@ -116,6 +117,7 @@
 {% endblock %}
 {% block js %}
     <script type="text/javascript">
+    $('.card-body p:last').after(`<p>原文链接:${window.location.href}</p>`)
         //评星
 {#        $('#star').raty({score: {{course.star}},#}
 {#            click: function(score, evt) {#}

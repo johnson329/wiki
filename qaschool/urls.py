@@ -16,10 +16,10 @@ urlpatterns = [
     path('mdeditor/', include('mdeditor.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
-    path('', views.index, name='index'),
+    # path('', views.index, name='index'),
 
     path('account/', include('account.urls')),
-    path('courses/', include('courses.urls')),
+    path('', include('courses.urls')),
     path('resource/', include('resource.urls')),
     path('practice/', include('practice.urls')),
 ]
