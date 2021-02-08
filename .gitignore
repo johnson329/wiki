@@ -10,7 +10,7 @@ uploads/*
 pages/course/*
 static/admin/*
 uwsgi.log
-*.sh
+#*.sh
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/

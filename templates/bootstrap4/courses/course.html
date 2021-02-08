@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ course.title }}{% endblock %}
-{% block keywards %}{{ course.keywords }}{% endblock %}
+{% block keywords %}{{ course.keywords|default_if_none:course.title }}{% endblock %}
 {% block description %}{{ course.description }}{% endblock %}
 
 {% block main %}

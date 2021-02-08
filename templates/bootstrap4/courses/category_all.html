@@ -1,24 +1,16 @@
 {% extends "base.html" %}
-{#{% block title %}{{ category.title }}{% endblock %}#}
 {% block title %}全部教程{% endblock %}
-{% block keywards %}{{ category.keywords }}{% endblock %}
-{% block description %}{{ category.abstract }}{% endblock %}
+{% block keywords %}python，js，golang，bootstrap{% endblock %}
+{% block description %}萌新教程（v2nwork.com）介绍python基础语法，python爬虫，flask,django等基础知识{% endblock %}
 {% block main %}
 {% load staticfiles %}
-
 <div class="bg-light pb-5">
     <div class="container" name="main">
       <!--面包屑------------------------------------------------------------------------------------------------------------------------>
-
       <ol class="breadcrumb border-0 mb-1">
         <li class="breadcrumb-item"><a href="/">首页</a></li>
         <li class="breadcrumb-item active">全部教程</li>
       </ol>
-
-{#        <div class="page-header" id="banner"><div class="row col-md-12">#}
-{#        <h1>{{ category.title }} <small class="text-muted">{{ category.manager.username }}</small></h1></div>#}
-{#        <p class="lead">{{ category.description | default_if_none:"&nbsp;" }}</p>#}
-{#        </div>#}
       <div class="row">
         <div class="col-xl-2 col-md-2 col-sm-3 sticky hidden-xs">
             <div class="list-group ">
