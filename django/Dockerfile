@@ -6,4 +6,5 @@ RUN pip3 install -r requirements.txt -i http://pypi.douban.com/simple/ --trusted
 #&& python3 manage.py migrate
 
 #CMD ["gunicorn","-c","./django/gunicorn.py","qaschool.wsgi"]
+RUN chmod a+x boot.sh
 ENTRYPOINT ["./boot.sh"]
