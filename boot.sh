@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 while true; do
     python manage.py migrate
     if [[ "$?" == "0" ]]; then
