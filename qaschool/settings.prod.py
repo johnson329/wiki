@@ -1,3 +1,4 @@
+from .common import *
 DEBUG = False
 SECRET_KEY = '#8t=%obel7cq1hsh3kcoxffx+=i7arj68vjr5p#xi1x0#3#r!a'
 

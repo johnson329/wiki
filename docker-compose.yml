@@ -26,6 +26,9 @@ services:
     container_name: django-container
     ports:
       - "8000:8000"
+    volumes:
+      # 改配置不用重新打镜像
+      - ./qaschool/settings.py:/src/qascholl/settings.py
 
 
   mysql:
