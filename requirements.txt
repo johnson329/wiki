@@ -1,3 +1,5 @@
+cffi==1.14.4
+cryptography==3.3.1
 Django==2.1
 django-ckeditor==6.0.0
 django-cors-headers==2.4.0
@@ -5,6 +7,9 @@ django-js-asset==1.2.2
 django-mdeditor==0.1.8
 Markdown==2.6.11
 Pillow==5.3.0
+pip-autoremove==0.9.1
+pycparser==2.20
 Pygments==2.2.0
 PyMySQL==1.0.2
 pytz==2021.1
+six==1.15.0

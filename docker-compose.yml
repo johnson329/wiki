@@ -28,7 +28,7 @@ services:
       - "8000:8000"
     volumes:
       # 改配置不用重新打镜像
-      - ./qaschool/settings.py:/src/qascholl/settings.py
+      - ./qaschool/settings.py:/src/qaschool/settings.py
 
 
   mysql:
