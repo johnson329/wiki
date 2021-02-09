@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="v2nwork.com" />
+    <meta name="author" content="v2nwork.com"/>
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
     <meta name="description" content="{% block description %}{% endblock %}">
     {% load staticfiles %}
@@ -15,37 +15,50 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
     <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
     <title>{% block title %}{% endblock %}-萌新教程</title>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?58912391eee586ada66abec0fb267fb0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <body>
 <!--导航----------------------------------------------------------------------------------------------------------->
 <header>
-  <nav class="navbar navbar-dark navbar-expand-lg bg-primary border-bottom shadow-sm " name="top">
-    <div class="container">
-      <a class="navbar-brand" href="/">萌新教程</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <div class="form-inline my-2 my-lg-0" id="search_form">
-          <input class="form-control border-    primary mr-1" id='keyword' name="keyword" type="search">
-          <button class="btn btn-secondary border-primary" type="button" id="search_btn" onclick="searchAction()">搜索</button>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-primary border-bottom shadow-sm " name="top">
+        <div class="container">
+            <a class="navbar-brand" href="/">萌新教程</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <div class="form-inline my-2 my-lg-0" id="search_form">
+                    <input class="form-control border-    primary mr-1" id='keyword' name="keyword" type="search">
+                    <button class="btn btn-secondary border-primary" type="button" id="search_btn"
+                            onclick="searchAction()">搜索
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 </header>
 {% block main %}
 {% endblock %}
 <div name="footer" class="p-3 mb-3">
-    <a href="#"  id="uptoTop" style="display: none">
+    <a href="#" id="uptoTop" style="display: none">
         <span class="fa fa-chevron-circle-up fa-2x" style="position: fixed;right: 1%;bottom: 5%;"></span>
     </a>
-    <div class="container" >
-{#        <div class="text-center text-muted">Power By Django 2.1</div>#}
+    <div class="container">
+        {#        <div class="text-center text-muted">Power By Django 2.1</div>#}
         <div class="text-center text-muted"></div>
-{#        <div class="text-center text-muted"><small>Copyright © 2018-2028 qaschool.cn 京ICP备18056904号 - QA学院</small></div>#}
+        {#        <div class="text-center text-muted"><small>Copyright © 2018-2028 qaschool.cn 京ICP备18056904号 - QA学院</small></div>#}
     </div>
 </div>
 </body>
@@ -58,17 +71,18 @@
     function searchAction() {
         let keyword = $('#keyword').val();
         keyword = keyword.replace(/^\s\s*/, '');
-        if(keyword != ''){
-            let url=`https://www.baidu.com/s?wd=site:v2nwork.com/%20${encodeURIComponent(keyword)}`
+        if (keyword != '') {
+            let url = `https://www.baidu.com/s?wd=site:v2nwork.com/%20${encodeURIComponent(keyword)}`
             console.log(url)
             window.location = url;
         }
     }
+
     $('#search_form').keydown(
         function (event) {
-            console.log(123,event.keyCode)
+            console.log(123, event.keyCode)
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode === 13){
+            if (keycode === 13) {
                 console.log(123123)
                 searchAction()
             }
@@ -76,16 +90,16 @@
         }
     )
     //返回顶部
-    $(function(){
-        $(window).scroll(function(){
+    $(function () {
+        $(window).scroll(function () {
             //当window的scrolltop距离大于1时，go to
-            if($(this).scrollTop() > 100){
+            if ($(this).scrollTop() > 100) {
                 $('#uptoTop').fadeIn();
-            }else{
+            } else {
                 $('#uptoTop').fadeOut();
             }
         });
-        $('#uptoTop').click(function(){
+        $('#uptoTop').click(function () {
             $('html ,body').animate({scrollTop: 0}, 300);
             return false;
         });

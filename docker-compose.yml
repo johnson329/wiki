@@ -12,11 +12,11 @@ services:
     volumes:
       # django的static和uploads文件，挂载出来共享
       - ./static:/home/www/static
-      - ./uploads:/home/www/uploads
+      - $HOME/wiki/uploads:/home/www/uploads
       # 配置文件
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
       # 日志
-      - ./log/nginx:/var/log/nginx
+      - $HOME/wiki/log/nginx:/var/log/nginx
 
 
   django:
@@ -42,7 +42,7 @@ services:
       MYSQL_USER: wiki_user
       MYSQL_PASSWORD: wiki_user_123321
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - $HOME/wiki/mysql/data:/var/lib/mysql
       - ./mysql/conf.d:/etc/mysql/conf.d
       - ./mysql/my.cnf:/etc/my.cnf
 
