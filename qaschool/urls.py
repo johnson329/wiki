@@ -3,7 +3,7 @@ from django.urls import path,include
 from django.conf import settings
 
 from courses import views
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import GenericSitemap
@@ -29,22 +29,23 @@ sitemaps={
 
 
 urlpatterns = [
-    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    # path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     path('wocao1/', admin.site.urls),
 
     path('mdeditor/', include('mdeditor.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
      name='django.contrib.sitemaps.views.sitemap'),
 
     # path('', views.index, name='index'),
 
-    path('account/', include('account.urls')),
+    # path('account/', include('account.urls')),
     path('', include('courses.urls')),
-    path('resource/', include('resource.urls')),
-    path('practice/', include('practice.urls')),
+    # path('resource/', include('resource.urls')),
+    # path('practice/', include('practice.urls')),
 
 ]
 
