@@ -41,3 +41,14 @@
 
 > 使用指导，建议，或bugs, 请微信联系lockingfree 
 
+#### sitemaps
+https://www.liujiangblog.com/course/django/169
+
+https://github.com/liangliangyy/DjangoBlog/blob/master/DjangoBlog/sitemap.py
+
+### seo notify
+
+https://github.com/liangliangyy/DjangoBlog/blob/master/DjangoBlog/spider_notify.py
+
+signal
+
