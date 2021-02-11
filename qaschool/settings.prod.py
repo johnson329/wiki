@@ -17,3 +17,4 @@ DATABASES = {
             },
     }
 }
+BAIDU_NOTIFY_URL=''

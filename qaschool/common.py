@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'corsheaders',
     'mdeditor',
     'ckeditor',
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     'resource',
     'courses',
     'practice',
+
 
 ]
 

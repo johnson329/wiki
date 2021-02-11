@@ -3,6 +3,8 @@ from django.urls import path
 from courses import views
 
 
+# app_name='course'
+
 urlpatterns = [
     # path('', views.lesson_edit, name='lesson_edit'),
     path('category/<category_slug>', views.category_detail, name='category'),

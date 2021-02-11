@@ -5,6 +5,27 @@ from django.conf import settings
 from courses import views
 from django.views.generic import RedirectView
 from django.contrib.auth import views as auth_views
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+from courses.models import Lesson
+from courses.models import Course
+from qaschool.sitemap import CourseSiteMap,LessonSiteMap,StaticViewSitemap
+
+# info_dict = {
+#     'queryset': Lesson.objects.all(),
+#     # 'date_field': 'pub_date',
+# }
+#
+# category_dict={
+#     'queryset': Course.objects.all(),
+#     # 'date_field': 'pub_date',
+# }
+
+sitemaps={
+    'courses':CourseSiteMap,
+    'lesson':LessonSiteMap,
+    'index':StaticViewSitemap
+}
 
 
 urlpatterns = [
@@ -15,6 +36,8 @@ urlpatterns = [
 
     path('mdeditor/', include('mdeditor.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+     name='django.contrib.sitemaps.views.sitemap'),
 
     # path('', views.index, name='index'),
 
@@ -22,6 +45,7 @@ urlpatterns = [
     path('', include('courses.urls')),
     path('resource/', include('resource.urls')),
     path('practice/', include('practice.urls')),
+
 ]
 
 
