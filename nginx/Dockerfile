@@ -6,5 +6,5 @@ WORKDIR /home/www
 #RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
 #COPY ./nginx/sources.list /etc/apt/
 
-#RUN apt-get update && apt-get install -y --allow-unauthenticated certbot python-certbot-nginx
+RUN apt-get update && apt-get install -y --allow-unauthenticated certbot python-certbot-nginx
 RUN rm /etc/nginx/conf.d/default.conf
