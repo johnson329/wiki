@@ -18,7 +18,7 @@ services:
       # 日志
       - $HOME/wiki/log/nginx:/var/log/nginx
     volumes_from:
-      - $HOME/wiki/uploads:/home/www/uploads
+      - django
 
 
   django:
