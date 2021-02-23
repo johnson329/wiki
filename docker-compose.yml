@@ -12,11 +12,13 @@ services:
     volumes:
       # django的static和uploads文件，挂载出来共享
       - ./static:/home/www/static
-      - $HOME/wiki/uploads:/home/www/uploads
+
       # 配置文件
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
       # 日志
       - $HOME/wiki/log/nginx:/var/log/nginx
+    volumes_from:
+      - $HOME/wiki/uploads:/home/www/uploads
 
 
   django:
