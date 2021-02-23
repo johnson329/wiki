@@ -29,6 +29,7 @@ services:
     volumes:
       # 改配置不用重新打镜像
       - ./qaschool/settings.py:/src/qaschool/settings.py
+      - $HOME/wiki/uploads:/src/uploads
 
 
   mysql:
