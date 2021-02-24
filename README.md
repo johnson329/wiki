@@ -52,3 +52,23 @@ https://github.com/liangliangyy/DjangoBlog/blob/master/DjangoBlog/spider_notify.
 
 signal
 
+## deploy
+### initial
+git clone
+
+cd wiki
+
+cd qaschool
+
+cp setting.prod.py settings.py
+
+vim setting.py
+
+docker-compose up -d
+
+### update
+docker-compose build
+
+docker-compose up -d
+
+
