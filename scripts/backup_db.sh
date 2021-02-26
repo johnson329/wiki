@@ -5,7 +5,7 @@
 # change the host, user, db if necessary:
 MYSQL_HOST=localhost
 MYSQL_USER=root
-MYSQL_DB=it
+MYSQL_DB=wiki
 
 # backup file name:
 BACKUP=wiki-`date +"%Y-%m-%d_%H_%M_%S"`.sql
