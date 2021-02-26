@@ -6,13 +6,14 @@
 MYSQL_HOST=localhost
 MYSQL_USER=root
 MYSQL_DB=wiki
+M_P=123456
 
 # backup file name:
 BACKUP=wiki-`date +"%Y-%m-%d_%H_%M_%S"`.sql
 
-echo "mysqldump -h $MYSQL_HOST --opt --hex-blob --set-gtid-purged=OFF --user $MYSQL_USER -p $MYSQL_DB > $BACKUP"
+echo "mysqldump -h $MYSQL_HOST --opt --hex-blob --set-gtid-purged=OFF --user $MYSQL_USER -p$M_P $MYSQL_DB > $BACKUP"
 
-mysqldump -h $MYSQL_HOST --opt --hex-blob --set-gtid-purged=OFF --user $MYSQL_USER -p $MYSQL_DB > $BACKUP
+mysqldump -h $MYSQL_HOST --opt --hex-blob --set-gtid-purged=OFF --user $MYSQL_USER -p$M_P $MYSQL_DB > $BACKUP
 
 gzip $BACKUP
 
