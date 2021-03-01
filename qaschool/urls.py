@@ -34,6 +34,7 @@ urlpatterns = [
 
     path('wocao1/', admin.site.urls),
 
+
     path('mdeditor/', include('mdeditor.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
@@ -44,6 +45,7 @@ urlpatterns = [
 
     # path('account/', include('account.urls')),
     path('', include('courses.urls')),
+    path('blog/', include('blog.urls')),
     # path('resource/', include('resource.urls')),
     # path('practice/', include('practice.urls')),
 

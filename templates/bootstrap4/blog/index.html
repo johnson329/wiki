@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}V2nwork博客{% endblock %}
+{% block keywords %}python,javascript,js,docker,linux{% endblock %}
+{% block description %}博客列表{% endblock %}
+
+{% block main %}
+    <div class="container" style="margin-top: 20px" name="main">
+    {% for blog in blogs %}
+        <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body" id="blog-item">
+                  <a href="{{ blog.get_absolute_url }}" class="card-link">
+                      {{ blog.title }}
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+
+
+
+    </div>
+
+{% endblock %}

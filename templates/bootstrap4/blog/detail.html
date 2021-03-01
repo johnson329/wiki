@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}{{ blog.title }}{% endblock %}
+{% block keywords %}{{ blog.keywords|default_if_none:blog.title }}{% endblock %}
+{% block description %}{{ blog.description }}{% endblock %}
+{% block main %}
+  {% load staticfiles %}
+  <div class="bg-light">
+    <div class="container" name="main" >
+
+      <div class="row">
+{#          <div class="col-lg-3 col-md-4 col-sm-12" name="left">#}
+{#              <div class="card">#}
+{#                <div class="card-header">#}
+{#                  <h5>#}
+{#                    <a class="card-link" href="{{ course.get_absolute_url }}">{{ course.title }}</a>#}
+{#                  </h5>#}
+{#                  <div id="star"></div>#}
+{#                </div>#}
+{#                <ul class="list-group list-group-flush">#}
+{#                  {% for ch in lessons %}#}
+{#                    <a class="list-group-item list-group-item-action {% if ch == lesson %}active{% endif %}" href="{{ ch.get_absolute_url }}">#}
+{#                      {{ ch.title }}#}
+{#                    </a>#}
+{#                  {% endfor %}#}
+{#                </ul>#}
+{#              </div>#}
+{#          </div>#}
+          <div class="col-lg-12 col-md-12 col-sm-12" name="right" style="margin-top: 20px">
+              <div class="card mb-5">
+                  <div class="card-body">
+                   <h1>{{ blog.title }}</h1>
+                    <small>
+                    <span class="text-muted">浏览 {{ blog.views }} &nbsp;&nbsp;</span>
+                  </small>
+                  <hr>
+                 {{ blog.content|safe }}
+
+                  </div>
+
+                  <div class="card-footer">
+{#                      {% if pre_blog %}#}
+{#                      <a href="{{ pre_blog.get_absolute_url }}" class="card-link"><span class="text-muted">上一篇: </span>{{ pre_blog.title }}</a>#}
+{#                      {% else %}#}
+{#                      &nbsp;#}
+{#                      {% endif %}#}
+{#                      {% if next_blog %}#}
+{#                      <a href="{{ next_blog.get_absolute_url }}" class="card-link pull-right"><span class="text-muted">下一篇: </span>{{ next_blog.title }}</a>#}
+{#                      {% endif %}#}
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript">
+    $('.card-body p:last').after(`<p>本文链接:<br>${window.location.href}</p>`)
+    </script>
+{% endblock %}

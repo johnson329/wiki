@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'resource',
     'courses',
     'practice',
+    'blog',
 
 
 ]
