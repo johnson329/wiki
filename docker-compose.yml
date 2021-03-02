@@ -17,7 +17,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
       # 日志
       - $HOME/wiki/log/nginx:/var/log/nginx
-      - $HOME/wiki/nginx/v2nwork.com:/etc/letsencrypt/live/v2nwork.com
+      - $HOME/wiki/nginx/letsencrypt:/etc/letsencrypt
     volumes_from:
       - django
 
