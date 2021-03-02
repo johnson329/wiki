@@ -18,6 +18,7 @@ services:
       # 日志
       - $HOME/wiki/log/nginx:/var/log/nginx
       - $HOME/wiki/nginx/letsencrypt:/etc/letsencrypt
+      - /etc/localtime:/etc/localtime:ro
     volumes_from:
       - django
 
