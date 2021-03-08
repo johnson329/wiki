@@ -28,6 +28,7 @@ services:
       context: .
       dockerfile: ./django/Dockerfile
     container_name: django-container
+    restart: always
     ports:
       - "8000:8000"
     volumes:
@@ -39,6 +40,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql-container
+    restart: always
     ports:
       - "3307:3306"
     environment:
